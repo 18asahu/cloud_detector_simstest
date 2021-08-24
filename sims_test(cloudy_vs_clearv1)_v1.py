@@ -24,11 +24,11 @@ print(image_count)
 
 #generating a cloudy pic
 cloudy = list(data_dir.glob('cloudy/*'))
-PIL.Image.open(str(cloudy[13]))
+#PIL.Image.open(str(cloudy[13]))
 
 #generating a clear sky pic
 clear = list(data_dir.glob('clear/*'))
-PIL.Image.open(str(clear[13]))
+#PIL.Image.open(str(clear[13]))
 
 
 #defining some parameters
@@ -66,9 +66,9 @@ plt.figure(figsize=(10,10))
 for images, labels in train_ds.take(1):
     for i in range(9):
         ax = plt.subplot(3,3,i+1)
-        plt.imshow(images[i].numpy().astype("uint8"))
-        plt.title(class_names[labels[i]])
-        plt.axis("off")
+       # plt.imshow(images[i].numpy().astype("uint8"))
+        #plt.title(class_names[labels[i]])
+        #plt.axis("off")
         
         
 #load data using dataset.cache() to prevent blocking I/O
@@ -100,9 +100,9 @@ plt.figure(figsize=(10,10))
 for images, _ in train_ds.take(1):
     for i in range(9):
         augmented_images = data_augmentation(images)
-        ax = plt.subplot(3,3,i+1)
-        plt.imshow(augmented_images[0].numpy().astype("uint8"))
-        plt.axis("off")
+        #ax = plt.subplot(3,3,i+1)
+        #plt.imshow(augmented_images[0].numpy().astype("uint8"))
+        #plt.axis("off")
         
         
 #Applying dropout to improve regularisation, and creating the model 
